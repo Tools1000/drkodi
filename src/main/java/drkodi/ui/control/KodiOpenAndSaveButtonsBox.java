@@ -21,7 +21,7 @@
 package drkodi.ui.control;
 
 import drkodi.data.movie.Movie;
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
@@ -37,15 +37,15 @@ public class KodiOpenAndSaveButtonsBox extends FlowPane {
 
         if (SystemUtils.IS_OS_MAC) {
             button.setOnAction(event -> {
-                DrRenameUtil.runOpenFolderCommandMacOs(item.getRenamingPath().getOldPath());
+                Tools1000Util.runOpenFolderCommandMacOs(item.getRenamingPath().getOldPath());
             });
         } else if (SystemUtils.IS_OS_LINUX) {
             button.setOnAction(event -> {
-                DrRenameUtil.runOpenFolderCommandLinux(item.getRenamingPath().getOldPath());
+                Tools1000Util.runOpenFolderCommandLinux(item.getRenamingPath().getOldPath());
             });
         } else if(SystemUtils.IS_OS_WINDOWS) {
             button.setOnAction(event -> {
-                DrRenameUtil.runOpenFolderCommandWindows(item.getRenamingPath().getOldPath());
+                Tools1000Util.runOpenFolderCommandWindows(item.getRenamingPath().getOldPath());
             });
         } else {
             log.warn("Unknown OS {}", SystemUtils.OS_NAME);

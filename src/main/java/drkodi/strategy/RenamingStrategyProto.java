@@ -1,6 +1,6 @@
 package drkodi.strategy;
 
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
@@ -100,7 +100,7 @@ public abstract class RenamingStrategyProto implements RenamingStrategy {
                 return file;
             }
             log.debug("Renaming" + IOUtils.LINE_SEPARATOR + "old:\t" + nameOld + IOUtils.LINE_SEPARATOR + "new:\t" + nameNew);
-            return DrRenameUtil.rename(file, nameNew);
+            return Tools1000Util.rename(file, nameNew);
         } catch (final FileAlreadyExistsException e) {
             log.debug(e.getLocalizedMessage());
             return doRename(file, getFileAlreadyExistsFileName(nameNew, fileNameCounter));

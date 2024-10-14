@@ -26,7 +26,7 @@ import drkodi.config.TheMovieDbConfig;
 import drkodi.data.MovieDetailsDto;
 import drkodi.data.TvDetailsDto;
 import drkodi.data.json.*;
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import javafx.scene.image.Image;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -102,7 +102,7 @@ public class MovieDbSearcher {
 
             if (searchResult.getBody() == null || searchResult.getBody().getResults().isEmpty()) return result;
 
-            List<TvSearchResultDto> subList = DrRenameUtil.getSubList(searchResult.getBody().getResults(), config.getNumberOfMaxSuggestions());
+            List<TvSearchResultDto> subList = Tools1000Util.getSubList(searchResult.getBody().getResults(), config.getNumberOfMaxSuggestions());
 
             subList.forEach(dto -> result.getSearchResults().put(dto.getId(), dto));
 
@@ -125,7 +125,7 @@ public class MovieDbSearcher {
 
             if (searchResult.getBody() == null || searchResult.getBody().getResults().isEmpty()) return result;
 
-            List<MovieSearchResultDto> subList = DrRenameUtil.getSubList(searchResult.getBody().getResults(), config.getNumberOfMaxSuggestions());
+            List<MovieSearchResultDto> subList = Tools1000Util.getSubList(searchResult.getBody().getResults(), config.getNumberOfMaxSuggestions());
 
             subList.forEach(dto -> result.getSearchResults().put(dto.getId(), dto));
 

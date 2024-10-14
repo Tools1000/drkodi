@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-public class DrRenameUtil {
+public class Tools1000Util {
 
     public static <T> T[] concatenateArray(T[] a, T[] b) {
         if (a == null) {

@@ -21,7 +21,7 @@
 package drkodi;
 
 
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import drrename.commons.RenamingPath;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -64,7 +64,7 @@ public class MediaFileNameIssue extends FxKodiIssue<MediaFileNameCheckResult> {
         var newPath = file.resolveSibling(getMovieNameFromFolder() + "." + extension);
         log.debug("Renaming from {} to {}", file, newPath);
         try {
-            DrRenameUtil.rename(file, newPath.getFileName().toString());
+            Tools1000Util.rename(file, newPath.getFileName().toString());
         } catch (IOException e) {
             throw new FixFailedException(e);
         }

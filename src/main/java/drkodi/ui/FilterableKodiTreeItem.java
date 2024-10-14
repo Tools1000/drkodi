@@ -21,7 +21,7 @@
 package drkodi.ui;
 
 import drkodi.FilterableTreeItem;
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import javafx.beans.Observable;
 import javafx.scene.control.TreeItem;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +46,7 @@ public class FilterableKodiTreeItem extends FilterableTreeItem<KodiTreeItemValue
     }
 
     protected Observable[] getExtractorCallback(TreeItem<KodiTreeItemValue<?>> item) {
-        return DrRenameUtil.concatenateArray(new Observable[]{item.getValue().warningProperty()}, extractor);
+        return Tools1000Util.concatenateArray(new Observable[]{item.getValue().warningProperty()}, extractor);
     }
 
     public void add(FilterableKodiTreeItem childItem) {

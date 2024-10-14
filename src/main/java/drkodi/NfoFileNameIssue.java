@@ -22,7 +22,7 @@ package drkodi;
 
 import drkodi.nfo.KodiConstants;
 import drkodi.nfo.NfoFileNameChecker;
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import drrename.commons.RenamingPath;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +47,7 @@ public class NfoFileNameIssue extends FxKodiIssue<NfoFileCheckResult> {
     @Override
     public void fix(NfoFileCheckResult result) throws FixFailedException {
         try {
-            DrRenameUtil.rename(result.getNfoFiles().get(0), getMovieNameFromFolder() + KodiConstants.NFO_FILE_EXTENSION);
+            Tools1000Util.rename(result.getNfoFiles().get(0), getMovieNameFromFolder() + KodiConstants.NFO_FILE_EXTENSION);
         } catch (IOException e) {
             throw new FixFailedException(e);
         }

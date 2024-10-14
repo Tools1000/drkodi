@@ -1,6 +1,6 @@
 package drkodi;
 
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
@@ -28,7 +28,7 @@ public class GeneralExceptionHandler {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle(String.format(resourceBundle.getString(ALERT_TITLE)));
             alert.setHeaderText(e.getLocalizedMessage());
-            TextArea area = new TextArea(DrRenameUtil.stackTraceToString(e));
+            TextArea area = new TextArea(Tools1000Util.stackTraceToString(e));
             alert.getDialogPane().setContent(area);
             area.setWrapText(true);
             area.setEditable(false);

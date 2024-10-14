@@ -3,7 +3,7 @@ package drkodi.task;
 import drkodi.KodiUtil;
 import drkodi.data.movie.Movie;
 import drkodi.normalization.MovieTitleWriteNormalizer;
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import javafx.concurrent.Task;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +25,6 @@ public class RenameFolderToMovieTitleTask extends Task<Path> {
         String normalizedMovieTitle = normalizer.normalize(movie.getMovieTitle());
         String newName = KodiUtil.buildFolderNameString(normalizedMovieTitle, movie.getMovieYear());
         log.debug("Renaming from {} to {}", currentPath.getFileName(), newName);
-        return DrRenameUtil.rename(currentPath, newName);
+        return Tools1000Util.rename(currentPath, newName);
     }
 }

@@ -1,7 +1,7 @@
 package drkodi;
 
 import com.github.tools1000.io.BackupCreator;
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DrRenameUtilTest {
+class Tools1000UtilTest {
 
     Path fileToRename = Paths.get("src/test/resources/rename-tests/some-dir/some-file.txt");
 
@@ -41,7 +41,7 @@ class DrRenameUtilTest {
     void rename() throws IOException {
 
         var newName = "some2-file2.txt";
-        DrRenameUtil.rename(fileToRename, newName);
+        Tools1000Util.rename(fileToRename, newName);
         newFile = Paths.get("src/test/resources/rename-tests/some-dir", newName);
         assertTrue(Files.exists(newFile));
         assertTrue(Files.isReadable(newFile));
@@ -56,7 +56,7 @@ class DrRenameUtilTest {
         Files.createFile(newFile);
 
         Throwable throwable =  assertThrows(FileAlreadyExistsException.class, () -> {
-            DrRenameUtil.rename(fileToRename, newName);
+            Tools1000Util.rename(fileToRename, newName);
         });
         assertEquals(FileAlreadyExistsException.class, throwable.getClass());
     }

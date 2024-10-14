@@ -1,6 +1,6 @@
 package drkodi.data.movie;
 
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.scene.control.Label;
@@ -26,7 +26,7 @@ public class MediaFilesFileSizeMovieTaskExecutor extends MovieTaskExecutor<List<
     protected void initTask() {
         super.initTask();
         task.setOnSucceeded(event -> {
-            fileSizeLabel.setText(DrRenameUtil.formatSize(task.getValue().stream().mapToLong(e -> e).sum()));
+            fileSizeLabel.setText(Tools1000Util.formatSize(task.getValue().stream().mapToLong(e -> e).sum()));
         });
     }
 

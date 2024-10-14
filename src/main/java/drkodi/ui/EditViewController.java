@@ -26,7 +26,7 @@ import drkodi.data.movie.MediaFilesFileSizeMovieTaskExecutor;
 import drkodi.data.movie.Movie;
 import drkodi.ui.control.GenresBox2;
 import drkodi.ui.control.KodiOpenAndSaveButtonsBox;
-import drkodi.util.DrRenameUtil;
+import drkodi.util.Tools1000Util;
 import drrename.commons.RenamingPath;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -157,7 +157,7 @@ public class EditViewController extends DebuggableController implements Initiali
                     movieYearTextField.textProperty().unbindBidirectional(oldValue.movieYearProperty());
 
                     oldValue.getMediaFiles().removeListener(mediaFilesListener);
-                    fileSizeLabel.setText(DrRenameUtil.formatSize(0));
+                    fileSizeLabel.setText(Tools1000Util.formatSize(0));
                 }
                 if(newValue != null){
 
