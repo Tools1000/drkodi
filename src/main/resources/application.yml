@@ -10,6 +10,7 @@ logging:
     drkodi.themoviedb: debug
 #    drkodi.data.movie: debug
 #    drkodi.data.dynamic: debug
+    drrename: debug
     com:
       ulisesbocchio: warn
   pattern:

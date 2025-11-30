@@ -451,7 +451,9 @@ public class Movie extends DynamicMovieData {
             Renamer.commitRename(this.getRenamingPath(), task.getValue());
         });
         task.setOnFailed(event -> {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Rename failed with \n" + event.getSource().getException().getClass().getSimpleName() + " for\n" + event.getSource().getException().getLocalizedMessage(), ButtonType.OK);
+            var text = "Rename failed with \n" + event.getSource().getException().getClass().getSimpleName() + " for\n" + event.getSource().getException().getLocalizedMessage();
+            log.warn(text);
+            Alert alert = new Alert(Alert.AlertType.ERROR, text, ButtonType.OK);
             alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             alert.initStyle(StageStyle.UTILITY);
             alert.showAndWait();

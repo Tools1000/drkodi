@@ -27,6 +27,8 @@ open module drkodi {
     requires net.rgielen.fxweaver.spring;
     requires spring.boot.autoconfigure;
     requires metadata.extractor;
-    requires tools1000;
+    requires tools;
+    requires org.bytedeco.javacv;
+    requires java.desktop;
     exports drkodi;
 }
